@@ -198,7 +198,6 @@ export default class BoardPresenter {
           await this.#pointModel.updatePoint(updateType, update);
         } catch (err) {
           this.#pointPresenters.get(update.id).setAborting();
-          PointPresenter.resetButtons();
         }
         break;
       case USER_ACTION.ADD_POINT:

@@ -20,6 +20,7 @@ const pointModel = new PointModel({
   townModel: townModel,
   offerModel: offerModel
 });
+pointModel.init();
 const filterModel = new FilterModel();
 
 const boardPresenter = new BoardPresenter({
@@ -47,10 +48,9 @@ const filterPresenter = new FilterPresenter({
   filterModel,
   pointModel
 });
+filterPresenter.init();
 
 render(newPointButtonComponent, addPointContainer, RenderPosition.BEFOREEND);
-filterPresenter.init();
-pointModel.init();
 boardPresenter.init();
 
 

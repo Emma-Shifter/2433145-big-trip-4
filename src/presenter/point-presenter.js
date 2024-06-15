@@ -123,7 +123,7 @@ export default class PointPresenter {
       destination: point.destination,
       offers: this.#pointModel.offerModel.getOfferByType(this.#pointModel.offerModel.offers, point.type),
     };
-    this.#point.offers.offers.forEach((offer) => {
+    this.#point.offers.offers?.forEach((offer) => {
       if(!(checkedOffers.includes(offer.id))){
         offer.isChecked = false;
       }

@@ -9,7 +9,7 @@ export default class SortItemView extends AbstractView{
     super();
     this.#sort = sort;
     this.#handleSortTypeChange = onSortTypeChange;
-    this.element.querySelector('label').addEventListener('click', this.#sortTypeChange);
+    this.element.addEventListener('click', this.#sortTypeChange);
   }
 
   get template() {
@@ -17,9 +17,10 @@ export default class SortItemView extends AbstractView{
   }
 
   #sortTypeChange = (evt) => {
-    if (evt.target.tagName !== 'LABEL') {
+    if (evt.target.tagName === 'DIV') {
       return;
     }
+
     this.#handleSortTypeChange(evt.target.dataset.sortType);
   };
 }

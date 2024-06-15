@@ -183,7 +183,9 @@ export default class CurrentFormView extends AbstractStatefulView{
   };
 
   #dateFromChangeHandler = ([userDate]) => {
-    const newData = { ...this._state, dateFrom: userDate, destination: this.#pointModel.townModel.getIDByTownName(this._state.destination)
+    const newData = {
+      ...this._state,
+      dateFrom: userDate,
     };
     if ('id' in this._state) {
       this.#pointModel.updatePoint(UPDATE_TYPE.PATCH, newData);
@@ -192,7 +194,9 @@ export default class CurrentFormView extends AbstractStatefulView{
   };
 
   #dateToChangeHandler = ([userDate]) => {
-    const newData = { ...this._state, dateTo: userDate, destination: this.#pointModel.townModel.getIDByTownName(this._state.destination)
+    const newData = {
+      ...this._state,
+      dateTo: userDate,
     };
     if ('id' in this._state) {
       this.#pointModel.updatePoint(UPDATE_TYPE.PATCH, newData);
