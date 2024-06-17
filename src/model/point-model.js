@@ -14,8 +14,6 @@ export default class PointModel extends Observable{
     this.#pointsApiService = pointsApiService;
     this.offerModel = offerModel;
     this.townModel = townModel;
-    this.offerModel.init();
-    this.townModel.init();
     this.#points = [];
   }
 
